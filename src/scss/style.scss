@@ -82,15 +82,20 @@ h2 {
 .icon-arrow {
 	cursor: pointer;
 	font-size: 3em;
+	transition: all 1s ease;
 
 	&--down {
 		margin-left: 128px;
 		transform: translateY(-8px);
 	}
+
+	&--rotate {
+		transform:rotate(360deg);
+	}
 }
 
 .nav {
-	display: none;
+
 }
 
 .nav-main {
