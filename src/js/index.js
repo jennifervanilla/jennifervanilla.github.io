@@ -10,11 +10,14 @@ const makeAnchorListeners = () => {
 	})
 };
 
+let arrow1Rotate = false;
 const makeArrowListeners = () => {
 	let arrow1 = document.querySelector('.icon-arrow');
 	arrow1.addEventListener('click', (event) => {
-		console.log('target: ', event.target);
-		event.target.classList.add('icon-arrow--rotate');
+		let action = !arrow1Rotate ? 'add' : 'remove'
+
+		event.target.classList[action]('icon-arrow--rotate');
+		arrow1Rotate = !arrow1Rotate
 	})
 }
 
