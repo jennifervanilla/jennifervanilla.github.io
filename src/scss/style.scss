@@ -77,6 +77,39 @@ h2 {
 		height: calc(100vh * 23);
 		background: linear-gradient(chartreuse, aqua);
 	}
-}ls
+}
+
+.icon-arrow {
+	cursor: pointer;
+	font-size: 3em;
+
+	&--down {
+		margin-left: 128px;
+		transform: translateY(-8px);
+	}
+}
+
+.nav {
+	display: none;
+}
+
+.nav-main {
+	display: flex;
+	flex-direction: column;
+	margin-top: 200px;
+	margin-left: 100px;
+
+	&__layer {
+		&--horizontal {
+			display: flex;
+		}
+	}
+}
+
+#jv-title {
+	margin-right: 13px;
+}
+
+
 
 
