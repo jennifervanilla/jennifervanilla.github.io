@@ -38,8 +38,9 @@ const makeArrowListeners = () => {
 		let horizontalNav = document.querySelector('.js-horizontal-nav');
 		event.target.classList[action]('icon-arrow--rotate');
 		horizontalNav.classList[action]('nav-main__list--show');
+		video.classList[action]('video--show');
 		arrow1Rotate = !arrow1Rotate;
-		video.style.opacity = 1;
+		
 	});
 
 	arrow2.addEventListener('click', (event) => {
@@ -48,7 +49,7 @@ const makeArrowListeners = () => {
 		event.target.classList[action]('icon-arrow--down--rotate');
 		verticalNav.classList[action]('nav--show');
 		arrow2Rotate = !arrow2Rotate;
-		video.style.opacity = 1;
+		// video.style.opacity = 1;
 	});
 };
 
@@ -61,12 +62,12 @@ const makeTitleListener = () => {
 	})
 };
 
-const themes = ['pink', 'purple', 'red', 'green', 'blue'];
+const themes = ['pink', 'purple', 'image', 'red',  'green', 'blue'];
 let idx = 0;
 const updateTheme = () => {
 	let prevTheme = themes[idx];
 	console.log('prevTheme: ', prevTheme);
-	if (idx < 4) idx++
+	if (idx < 5) idx++
 	else idx = 0;
 	console.log('idx: ', idx);
 	let nextTheme = themes[idx];
