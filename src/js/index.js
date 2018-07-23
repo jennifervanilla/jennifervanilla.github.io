@@ -8,6 +8,7 @@ const video = document.querySelector('.video');
 
 let arrow1Rotate = false;
 let arrow2Rotate = false;
+let idx;
 
 const makeNavListeners = () => {
 	let items = Array.from(document.querySelector('.nav-main__list')
@@ -62,21 +63,20 @@ const makeTitleListener = () => {
 	})
 };
 
-const themes = ['pink', 'purple', 'image', 'red',  'green', 'blue'];
-let idx = 0;
+const themes = ['off', 'pink', 'purple', 'image', 'red',  'green', 'blue'];
 const updateTheme = () => {
 	let prevTheme = themes[idx];
-	console.log('prevTheme: ', prevTheme);
-	if (idx < 5) idx++
-	else idx = 0;
-	console.log('idx: ', idx);
+	if (idx < 6) idx++
+	else idx = 1;
 	let nextTheme = themes[idx];
-	console.log('nextTheme: ', nextTheme);
 	theme.classList.remove(`theme--${prevTheme}`);
 	theme.classList.add(`theme--${nextTheme}`);
 }
 
 const init = () => {
+	idx = Math.floor(Math.random() * 6);
+	theme.classList.remove(`theme--off`);
+	updateTheme();
 	makeNavListeners();
 	makeArrowListeners();
 	makeTitleListener();
