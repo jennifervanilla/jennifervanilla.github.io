@@ -15,6 +15,7 @@ let arrow1Rotate = false;
 let arrow2Rotate = false;
 let randomOpen = false;
 let mainOpen = false;
+let randomShowing = false;
 let idx;
 let prevItem;
 let prevView;
@@ -133,7 +134,10 @@ const makeClockListener = () => {
 	})
 
 	mobileClock.addEventListener('click', () => {
-		console.log('prevView: ', prevView);
+		if (mainOpen) {
+			lab.src = lab.src;
+			mainOpen = false;
+		}
 		randomShowing = true;
 		if (!arrow2Rotate) random.setAttribute('style', 'transform: translateY(-200px)');
 		if (arrow2Rotate) random.setAttribute('style', 'transform: translateY(0)');
@@ -144,7 +148,6 @@ const makeClockListener = () => {
 		displayVideo(src);
 		random.classList.add('view-option--show');
 		prevView = random;
-		console.log('prevView: ', prevView);
 	})
 };
 

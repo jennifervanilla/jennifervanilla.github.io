@@ -412,6 +412,14 @@ ul {
 
 	#random {
 		transform: translateY(-200px);
+		margin: 0 auto;
+	}
+
+	#a-jv-lab {
+		&.view-option--show{
+			display: flex;
+			flex-direction: column;
+		}
 	}
 
 	.icon-arrow {
@@ -450,6 +458,10 @@ ul {
 			transform: rotate(360deg);
 			margin: 0;
 		}
+	}
+
+	.icon-arrow--down-desktop {
+		display: none;
 	}
 
 	iframe {
