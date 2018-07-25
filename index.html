@@ -7,27 +7,33 @@
 		<title>Jennifer Vanilla</title>
 		<link rel="stylesheet" href="dist/scss/style.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 	</head>
 	<body class="theme theme--off">
+	<div class="outer">
 	<nav class="nav-main">
 		<div class="nav-main__layer--horizontal">
 			<h1 id="jv-title">Jennifer Vanilla</h1>
 			<span class="icon-arrow">&#9755;</span>
 			<ul class="nav-main__list js-horizontal-nav">
 				<li class="nav-main__list-item">
-					<i class="fab fa-youtube"></i>
+					<a href="http://youtube.com/jennifervanillatv" target="_blank"><i class="fab fa-youtube"></i></a>
 				</li>
 				<li class="nav-main__list-item">
-					<i class="fab fa-instagram"></i>
+					<a href="http://instagram.com/jennifervanilla" target="_blank"><i class="fab fa-instagram"></i></a>
 				</li>
 				<li class="nav-main__list-item">
-					<i class="fab fa-twitter"></i>
+					<a href="http://twitter.com/jennifervanilla" target="_blank"><i class="fab fa-twitter"></i></a>
 				</li>
 				<li class="nav-main__list-item">
-					<i class="fab fa-facebook"></i>
+					<a href="http://facebook.com/jennifervanilla" target="_blank"><i class="fab fa-facebook"></i></a>
 				</li>
-				<li class="nav-main__list-item">
-					<i class="far fa-envelope"></i>
+				<li id="shop" class="nav-main__list-item">
+					<a href="https://jennifervanilla.bandcamp.com/merch" target="_blank">SHOP</a>
+				</li>
+				<li id="clock" class="nav-main__list-item">
+					<span>&#128339;</span>
 				</li>
 			</ul>
 		</div>
@@ -36,49 +42,90 @@
 	<main>
 	<nav class="nav js-vertical-nav">
 		<ul class="nav-list">
-			<li id="a-recordings" class="nav-link">
+			<li id="recordings" class="nav-link">
 				<h3>Recordings</h3>
-				<ul class="nav-link__list">
-					<li>
-						<a href="https://jennifervanilla.bandcamp.com/releases">Bandcamp</a>
-					</li>
-					<li>
-						<a href="https://soundcloud.com/jennifervanilla">Soundcloud</a>
-					</li>
-				</ul>
 			</li>
-			<li id="a-bootlegs" class="nav-link">
-				<a href="http://youtube/jennifervanillatv">Bootlegs
-				</a>
+			<li id="jv-lab" class="nav-link">
+				<h3>JVL@b</h3>
 			</li>
-			<li class="nav-link"><h3>Public Eye</h3></li>
-			<li class="nav-link"><h3>Shop</h3></li>
-			<li class="nav-link"><h3>JVL@b</h3></li>
+			<li id="public-eye" class="nav-link">
+				<h3>"Public Eye"</h3>
+			</li>
+			<li id="contact" class="nav-link">
+				<h3>Contact Jennifer</h3>
+			</li>
 		</ul>
 	</nav>
-	<div class="video">
-		<iframe width="490" height="350" src="https://www.youtube.com/embed/W9MIDVNBbKs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	<div class="view">
+		<div id="random" class="view-option">
+			<iframe width="490" height="350" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</div>
+		<div id="a-recordings" class="view-option">
+			<h2>listen</h2>
+			<ul class="nav-link__list nav-link__list--recordings">
+				<li>
+					<a href="https://jennifervanilla.bandcamp.com/releases">Bandcamp</a>
+				</li>
+				<li>
+					<a href="https://soundcloud.com/jennifervanilla">Soundcloud</a>
+				</li>
+			</ul>
+		</div>
+		<div id="a-public-eye" class="view-option">
+			<h2>selected bibliography</h2>
+			<ul class="public-eye__list">
+				<li class="public-eye__item">
+					<a class="public-eye__link" href="http://ravelinmagazine.com/posts/becca-kauffman-jennifer-vanilla">Becca Kauffman on Being Jennifer Vanilla</a> - Ravelin Magazine
+				</li>
+				<li class="public-eye__item">
+					<a class="public-eye__link" href="https://m.styleweekly.com/richmond/jennifer-vanilla-places-her-critique-of-commercialism-firmly-on-the-dance-floor/Content?oid=7256626">Jennifer Vanilla Places Her Critique of Commercialism Firmly on the Dance Floor</a> - Style Weekly
+				</li>
+				<li class="public-eye__item">
+					<a class="public-eye__link" href="https://bostonhassle.com/jennifer-vanillas-absurd-spectacle">Jennifer Vanilla's Absurd Spectacle</a> - Boston Hassle
+				</li>
+				<li class="public-eye__item">
+					<a class="public-eye__link" href="http://thesparkmag.com/artists/sitcom-and-jennifer-vanilla-dissect-our-never-ending-thirst-for-content">Sitcom and Jennifer Vanilla Dissect Our Never-Ending Thirst for Content</a> - Spark Mag
+				</li>
+				<li class="public-eye__item">
+					<a class="public-eye__link" href="https://qns.com/story/2017/06/02/jennifer-vanilla-brings-performance-art-experience-windjammer-ridgewood-next-week/">Jennifer Vanilla Brings Performance Art Experience to the Windjammer</a> - Ridgewood Times
+				</li>
+				<li class="public-eye__item">
+					<a class="public-eye__link" href="https://thecreativeindependent.com/people/becca-kauffman-on-becoming-your-own-muse">Becca Kauffman on Becoming Your Own Muse</a> - The Creative Independent
+				</li>
+				<li class="public-eye__item">
+					<a class="public-eye__link" href="http://badatsports.com/2018/episode-617-jennifer-vanilla/">Jennifer Vanilla</a> - Bad at Sports
+				</li>
+				<li class="public-eye__item">
+					<a class="public-eye__link" href="https://www.humorandtheabject.com/blog/2018/1/21/podcast-jennifer-vanilla">Jennifer Vanilla</a> - Humor and the Abject
+				</li>
+			</ul>
+		</div>
+		<div id="a-jv-lab" class="view-option">
+			<h2>JVL@b</h2>
+			<p>JVL@b, aka Jennifer Vanilla: Live at the Bar, is an experiential performance laboratory that takes place monthly in the secret ballroom of The Windjammer bar in Ridgewood, Queens. At once an "incubator of the avatarial arts" and a longterm community engagement project, JVL@b invites contemporary performance artists to participate in themed, one-time-only, Jennifer-tinged theatrical experiments that seek to support and creatively contextualize their work as solo artists.</p>
+
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/rRNTZ7Y9dtw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+			<p>Past JVL@bs include Jennifer Vanilla is a Sell Out!, a tabloid saga chronicling Jennifer's ego overdose and subsequent journey to recovery; Being Jennifer Vanilla, a jenniferized adaptation of the movie Being John Malkovich, Group Jennifer, a massive participatory group therapy session led by a phony psychologist; and Everything's Coming Up Jennifers, a vaudeville club housing a cast of melodramatic Broadway archetypes.</p>
+
+			<p>JVL@b is filmed for public access TV and airs as The Jennifer Vanilla Hour on Queens Public Television.</p> 
+
+			<p>Past JVL@b performers: Crichton Atkinson, Laurel Atwell, Annie Bielski, Nat Brower, Elsa Brown, Natalie Casagran Lopez, Emily Cobb, Jessica Cook, Angelina Dreem, Gracie Gardner, Jen Goma, Michael Guardiola, Hannah Kallenbach, Iain MacNeill, Hannah Mitchell, Teeny Lieberson, Anya Liftig, Dawn Lombardi, Lily Marotta, Katie McShane, Chandler Moses, Zannie Owens, Sam Regal, Alex Schmidt, Peter Smith, Jennifer Sullivan, Tara-Jo Tashna/Dey, Alexandra Tatarsky, Samuel Boat, Poncili Creacion, Bernard Herman, S the Supplicant, Lou Tides, Sisters Weekend.</p>
+
+			<p>Next JVL@b: Tue Aug 7, 8pm</p>
+			<p>Check here for updates</p>
+
+			<p>JV TV GUIDE: The Jennifer Vanilla Hour</p>
+			<p>Third Sundays 7pm on channel 34 (Fios), 56 (Spectrum), 83 (RCN)</p>
+			<p>Third Wednesdays 4pm on channel 36 (Fios), 34 (Spectrum), 56 (RCN)</p>
+		</div>
+		<div id="a-contact" class="view-option">
+			<h2>email</h2>
+			<a href="mailto:jennyexperience@gmail.com">jennyexperience@gmail.com</a>
+		</div>
 	</div>
 	</main>
-	<footer>
-		<ul class="nav-main__list js-horizontal-nav">
-	<li class="nav-main__list-item">
-		<i class="fab fa-youtube"></i>
-	</li>
-	<li class="nav-main__list-item">
-		<i class="fab fa-instagram"></i>
-	</li>
-	<li class="nav-main__list-item">
-		<i class="fab fa-twitter"></i>
-	</li>
-	<li class="nav-main__list-item">
-		<i class="fab fa-facebook"></i>
-	</li>
-	<li class="nav-main__list-item">
-		<i class="far fa-envelope"></i>
-	</li>
-</ul>
-</footer>
+	</div>
 	<script src="dist/bundle.js"></script>
 	</body>
 </html>

@@ -53,13 +53,181 @@ h2 {
 	line-height: 2rem;
 }
 
-footer {
-	position: fixed;
-	bottom: 0;
+h3 {
+	cursor: pointer;
+}
 
-	ul {
+ul {
+	list-style: none;
+}
+
+.icon-arrow {
+	cursor: pointer;
+	font-size: 2em;
+	padding-right: 30px;
+	transition: all 1s ease;
+
+	&--down {
+		font-size: 2em;
+		margin-left: 119px;
+		transition: all 1.5s ease;
+
+		&--rotate {
+			/*transform: rotate(90deg);*/
+			font-size: 4em;
+
+		}
+	}
+
+	&--rotate {
+		transform: rotate(360deg);
+	}
+}
+
+.nav {
+	display: flex;
+	justify-content: center;
+	min-width: 250px;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 1s ease;
+
+	&--show {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	&-list {
+		line-height: 1.8em;
+		margin: 0;
+		padding: 0;
+	}
+
+	&-link {
+		margin-bottom: 20px;
+		transition: all 1s ease;
+
+		&--active {
+			font-style: italic;
+		}
+
+		&__list {
+
+			&--recordings {
+				li {
+					font-family: monospace;
+					font-size: 1.5em;
+					margin-bottom: 10px;
+					text-decoration: underline;
+
+					&:hover {
+						text-decoration: none;
+						a {
+							font-style: italic;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.nav-main {
+	display: flex;
+	flex-direction: column;
+
+	&__layer {
+		&--horizontal {
+			display: flex;
+		}
+	}
+
+	&__list {
+		align-items: center;
 		display: flex;
+		font-family: sans-serif;
+		font-size: 1.2em;
 		list-style: none;
+		opacity: 0;
+		padding: 0;
+		transition: opacity 1s ease-in 0.5s;
+		visibility: hidden;
+		white-space: nowrap;
+
+		&-item {
+			padding-right: 30px;
+		}
+
+		&--show {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+#jv-title {
+	cursor: pointer;
+	margin-right: 13px;
+	transition: all 0.5s ease;
+	white-space: nowrap;
+	width: 317px;
+}
+
+#shop {
+	font-size: 0.9em;
+  font-weight: bold;
+  font-family: courier;
+}
+
+.view {
+	width: 600px;
+	transform: translateY(-40px);
+}
+
+.view-option {
+	display: none;
+
+	&--show {
+		display: block;
+	}
+}
+
+#clock {
+	cursor: pointer;
+	margin-left: -6px;
+	transform: translateY(1px);
+}
+
+#a-contact {
+	h2 {
+		margin-bottom: 10px;
+	}
+	a {
+
+		&:hover {
+			font-style: italic;
+		}
+	}
+}
+
+#random {
+	padding-top: 30px;
+}
+
+.public-eye {
+
+	&__item {
+		margin-bottom: 20px;
+	}
+
+	&__link {
+		font-style: italic;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
 	}
 }
 
@@ -102,6 +270,34 @@ footer {
 		#jv-title {
 			font-family: cursive;
 			letter-spacing: 0.08em;
+			margin-right: 25px
+		}
+
+		#random {
+			padding-top: 50px;
+		}
+
+		.icon-arrow {
+			margin-top: 5px;
+
+			&--down {
+				margin-top: -38px;
+    		margin-left: 135px;
+
+				&--rotate {
+					margin-left: 70px;
+					margin-top: -10px;
+				}
+			}
+		}
+
+		.nav-main__list {
+			margin-top: 14px;
+			margin-bottom: 60px;
+		}
+
+		.view {
+			transform: translateY(-50px);
 		}
 	}
 
@@ -113,10 +309,24 @@ footer {
 			color: white;
 			font-family: monospace;
 			font-style: italic;
+			margin-right: 23px;
 		}
 
 		a {
 			color: white;
+		}
+
+		.nav-main__list {
+			margin-top: 9px;
+		}
+
+		.icon-arrow {
+			&--down {
+				&--rotate {
+					margin-left: 50px;
+    			margin-top: 20px;
+				}
+			}
 		}
 	}
 
@@ -163,103 +373,7 @@ footer {
 	}
 }
 
-.icon-arrow {
-	cursor: pointer;
-	font-size: 2em;
-	padding-right: 30px;
-	transition: all 1s ease;
 
-	&--down {
-		font-size: 2em;
-		margin-left: 119px;
-		transition: all 1.5s ease;
-
-		&--rotate {
-			/*transform: rotate(90deg);*/
-			font-size: 4em;
-
-		}
-	}
-
-	&--rotate {
-		transform: rotate(360deg);
-	}
-}
-
-.nav {
-	display: flex;
-	justify-content: center;
-	opacity: 0;
-	visibility: hidden;
-	transition: all 1s ease;
-	width: 317px;
-
-	&--show {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	&-list {
-		line-height: 1.8em;
-		margin: 0;
-		padding: 0;
-	}
-
-	&-link {
-		margin-bottom: 20px;
-	}
-}
-
-.nav-main {
-	display: flex;
-	flex-direction: column;
-
-	&__layer {
-		&--horizontal {
-			display: flex;
-		}
-	}
-
-	&__list {
-		align-items: center;
-		display: flex;
-		font-family: sans-serif;
-		font-size: 1.2em;
-		list-style: none;
-		opacity: 0;
-		padding: 0;
-		transition: opacity 1s ease-in 0.5s;
-		visibility: hidden;
-		white-space: nowrap;
-
-		&-item {
-			padding-right: 30px;
-		}
-
-		&--show {
-			opacity: 1;
-			visibility: visible;
-		}
-	}
-}
-
-#jv-title {
-	cursor: pointer;
-	margin-right: 13px;
-	transition: all 0.5s ease;
-	white-space: nowrap;
-	width: 317px;
-}
-
-.video {
-	padding: 25px;
-	opacity: 0;
-	transition: opacity 1.2s ease;
-
-	&--show {
-		opacity: 1;
-	}
-}
 
 
 

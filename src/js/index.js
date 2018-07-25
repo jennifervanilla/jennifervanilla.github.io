@@ -1,56 +1,66 @@
+import videos from './videos';
+
 const theme = document.querySelector('.theme');
-console.log('theme: ', theme);
 const title = document.getElementById('jv-title');
 const arrow1 = document.querySelector('.icon-arrow');
 const arrow2 = document.querySelector('.icon-arrow--down');
 const verticalNav = document.querySelector('.js-vertical-nav');
-const video = document.querySelector('.video');
+const random = document.getElementById('random');
+const clock = document.getElementById('clock');
 
 let arrow1Rotate = false;
 let arrow2Rotate = false;
 let idx;
+let prevItem;
+let prevView;
 
 const makeNavListeners = () => {
-	let items = Array.from(document.querySelector('.nav-main__list')
-		.querySelectorAll('.nav-main__list-item'));
+	let items = Array.from(document.querySelector('.js-vertical-nav')
+		.querySelectorAll('.nav-link'));
 
 	items.forEach(li => {
+		
 		let id = li.id || null;
 		li.addEventListener('click', () => {
-			// updateTheme();
-			if (!arrow2Rotate) {
-				arrow2.classList.add('icon-arrow--down--rotate');
-				verticalNav.classList.add('nav--show');
-				arrow2Rotate = true;
-			}
+			li.classList.add('nav-link--active');
+			if (prevItem && prevItem !== li) prevItem.classList.remove('nav-link--active');
+			prevItem = li;
 
-			let target = document.getElementById(`a-${id}`);	
-			console.log('scrollY: ', window.scrollY)
-			target.scrollIntoView({behavior: "smooth"});
-			console.log('scrollY: ', window.scrollY)
+			let view = document.getElementById(`a-${id}`);	
+			view.classList.add('view-option--show');
+			if (prevView && prevView !== view) prevView.classList.remove('view-option--show');
+			prevView = view;
 		})
 	})
 };
 
 const makeArrowListeners = () => {
 	arrow1.addEventListener('click', (event) => {
-		// updateTheme();
 		let action = !arrow1Rotate ? 'add' : 'remove';
 		let horizontalNav = document.querySelector('.js-horizontal-nav');
 		event.target.classList[action]('icon-arrow--rotate');
 		horizontalNav.classList[action]('nav-main__list--show');
-		video.classList[action]('video--show');
+		if (!arrow1Rotate) {
+			let video = getRandomVideo();
+			displayVideo(video);
+			random.classList.add('view-option--show');
+			if (prevView && prevView !== random) prevView.classList.remove('view-option--show');
+			prevView = random;
+		} else {
+			displayVideo('');
+			random.classList.remove('view-option--show');
+		}
+
 		arrow1Rotate = !arrow1Rotate;
-		
 	});
 
 	arrow2.addEventListener('click', (event) => {
-		// updateTheme();
 		let action = !arrow2Rotate ? 'add' : 'remove';
 		event.target.classList[action]('icon-arrow--down--rotate');
 		verticalNav.classList[action]('nav--show');
+		if (!arrow2Rotate) prevView && prevView.classList.add('view-option--show');
+		else if (arrow2Rotate) prevView && prevView.classList.remove('view-option--show');
 		arrow2Rotate = !arrow2Rotate;
-		// video.style.opacity = 1;
 	});
 };
 
@@ -59,9 +69,36 @@ const makeTitleListener = () => {
 	title.addEventListener('click', () => {
 		updateTheme();
 		window.scrollTo(0, -30);
-		console.log(window.scrollY);
 	})
 };
+
+let played = false;
+const makeClockListener = () => {
+	clock.addEventListener('click', () => {
+		if (!played) played = true;
+		let video = getRandomVideo();
+		let src = played ? `${video}?autoplay=1` : video;
+		displayVideo(src);
+	})
+};
+
+let videosCopy = [...videos];
+let num = 11;
+const getRandomVideo = () => {
+	if (num === 0) {
+		num = 11;
+		videosCopy = [...videos];
+	}
+	let i = Math.floor(Math.random() * num);
+	let video = videosCopy[i];
+	videosCopy.splice(i, 1);
+	num--
+	return video;
+};
+
+const displayVideo = (video) => {
+	random.firstElementChild.src = video;
+}
 
 const themes = ['off', 'pink', 'purple', 'image', 'red',  'green', 'blue'];
 const updateTheme = () => {
@@ -71,15 +108,16 @@ const updateTheme = () => {
 	let nextTheme = themes[idx];
 	theme.classList.remove(`theme--${prevTheme}`);
 	theme.classList.add(`theme--${nextTheme}`);
-}
+};
 
 const init = () => {
 	idx = Math.floor(Math.random() * 6);
 	theme.classList.remove(`theme--off`);
 	updateTheme();
-	makeNavListeners();
 	makeArrowListeners();
+	makeNavListeners();
 	makeTitleListener();
+	makeClockListener();
 };
 
 init();
