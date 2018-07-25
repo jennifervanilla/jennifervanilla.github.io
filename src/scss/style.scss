@@ -67,6 +67,10 @@ ul {
 	padding-right: 30px;
 	transition: all 1s ease;
 
+	&--mobile {
+		display: none;
+	}
+
 	&--down {
 		font-size: 2em;
 		margin-left: 119px;
@@ -407,13 +411,16 @@ ul {
 	}
 
 	#random {
-		transform: translateY(-220px);
+		transform: translateY(-200px);
 	}
 
 	.icon-arrow {
 		display: none;
 		&--down {
 			display: block;
+		}
+		&--mobile {
+			display: block
 		}
 	}
 

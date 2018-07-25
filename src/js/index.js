@@ -8,6 +8,7 @@ const verticalNav = document.querySelector('.js-vertical-nav');
 const random = document.getElementById('random');
 const clock = document.getElementById('clock');
 const mobileClock = document.getElementById('clock--mobile');
+const mobileArrow = document.getElementById('arrow--mobile');
 
 let arrow1Rotate = false;
 let arrow2Rotate = false;
@@ -29,6 +30,7 @@ const makeNavListeners = () => {
 
 			let view = document.getElementById(`a-${id}`);	
 			view.classList.add('view-option--show');
+			if (prevView && prevView === random) random.classList.remove('view-option--show');
 			if (prevView && prevView !== view) prevView.classList.remove('view-option--show');
 			prevView = view;
 		})
@@ -57,7 +59,20 @@ const makeArrowListeners = () => {
 
 	arrow2.addEventListener('click', (event) => {
 		console.log('prevView: ', prevView);
-		random.setAttribute('style', 'transform: translateY(0)');
+		// if (randomShowing) random.setAttribute('style', 'transform: translateY(0)');
+		let action = !arrow2Rotate ? 'add' : 'remove';
+		event.target.classList[action]('icon-arrow--down--rotate');
+		verticalNav.classList[action]('nav--show');
+		if (!arrow2Rotate)
+			prevView && prevView.classList.add('view-option--show');
+		else if (arrow2Rotate) 
+			prevView && prevView.classList.remove('view-option--show');
+		arrow2Rotate = !arrow2Rotate;
+	});
+
+	mobileArrow.addEventListener('click', (event) => {
+		console.log('prevView: ', prevView);
+		if (randomShowing) random.setAttribute('style', 'transform: translateY(0)');
 		let action = !arrow2Rotate ? 'add' : 'remove';
 		event.target.classList[action]('icon-arrow--down--rotate');
 		verticalNav.classList[action]('nav--show');
@@ -78,17 +93,25 @@ const makeTitleListener = () => {
 };
 
 let played = false;
+let randomShowing = false;
 const makeClockListener = () => {
 	clock.addEventListener('click', () => {
 		if (!played) played = true;
+		if (prevView && prevView !== random) {
+			prevView.classList.remove('view-option--show');
+			random.classList.add('view-option--show');
+		}
 		let video = getRandomVideo();
 		let src = played ? `${video}?autoplay=1` : video;
 		displayVideo(src);
+		if (prevView !== random) prevView = random;
 	})
 
 	mobileClock.addEventListener('click', () => {
 		console.log('prevView: ', prevView);
-		if (arrow2Rotate) random.setAttribute('style', 'transform: translateY(-220px)');
+		randomShowing = true;
+		if (!arrow2Rotate) random.setAttribute('style', 'transform: translateY(-200px)');
+		if (arrow2Rotate) random.setAttribute('style', 'transform: translateY(0)');
 		if (prevView && prevView !== random) prevView.classList.remove('view-option--show');
 		if (!played) played = true;
 		let video = getRandomVideo();
