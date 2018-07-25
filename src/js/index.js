@@ -7,6 +7,7 @@ const arrow2 = document.querySelector('.icon-arrow--down');
 const verticalNav = document.querySelector('.js-vertical-nav');
 const random = document.getElementById('random');
 const clock = document.getElementById('clock');
+const mobileClock = document.getElementById('clock--mobile');
 
 let arrow1Rotate = false;
 let arrow2Rotate = false;
@@ -55,11 +56,15 @@ const makeArrowListeners = () => {
 	});
 
 	arrow2.addEventListener('click', (event) => {
+		console.log('prevView: ', prevView);
+		random.setAttribute('style', 'transform: translateY(0)');
 		let action = !arrow2Rotate ? 'add' : 'remove';
 		event.target.classList[action]('icon-arrow--down--rotate');
 		verticalNav.classList[action]('nav--show');
-		if (!arrow2Rotate) prevView && prevView.classList.add('view-option--show');
-		else if (arrow2Rotate) prevView && prevView.classList.remove('view-option--show');
+		if (!arrow2Rotate)
+			prevView && prevView.classList.add('view-option--show');
+		else if (arrow2Rotate) 
+			prevView && prevView.classList.remove('view-option--show');
 		arrow2Rotate = !arrow2Rotate;
 	});
 };
@@ -79,6 +84,19 @@ const makeClockListener = () => {
 		let video = getRandomVideo();
 		let src = played ? `${video}?autoplay=1` : video;
 		displayVideo(src);
+	})
+
+	mobileClock.addEventListener('click', () => {
+		console.log('prevView: ', prevView);
+		if (arrow2Rotate) random.setAttribute('style', 'transform: translateY(-220px)');
+		if (prevView && prevView !== random) prevView.classList.remove('view-option--show');
+		if (!played) played = true;
+		let video = getRandomVideo();
+		let src = played ? `${video}?autoplay=1` : video;
+		displayVideo(src);
+		random.classList.add('view-option--show');
+		prevView = random;
+		console.log('prevView: ', prevView);
 	})
 };
 

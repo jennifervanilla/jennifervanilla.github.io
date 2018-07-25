@@ -174,6 +174,10 @@ ul {
 	width: 317px;
 }
 
+#clock--mobile {
+	display: none;
+}
+
 #shop {
 	font-size: 0.9em;
   font-weight: bold;
@@ -213,6 +217,14 @@ ul {
 
 #random {
 	padding-top: 30px;
+}
+
+#here {
+	color: blue;
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
 }
 
 .public-eye {
@@ -373,7 +385,94 @@ ul {
 	}
 }
 
+@media screen and (max-width: $breakpoint-sm) {
+	.nav-main__layer--horizontal {
+		flex-direction: column;
+	}
 
+	h3 {
+		margin-top: 0;
+	}
 
+	#jv-title {
+		width: 100%;
+	}
+
+	#clock {
+		display: none;
+	}
+
+	#clock--mobile {
+		display: block;
+	}
+
+	#random {
+		transform: translateY(-220px);
+	}
+
+	.icon-arrow {
+		display: none;
+		&--down {
+			display: block;
+		}
+	}
+
+	.js-horizontal-nav {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	main {
+		flex-direction: column;
+	}
+
+	.nav-main__list {
+		width: 100%;
+		justify-content: space-between;
+	}
+
+	.nav-main__list-item {
+		padding-right: 0;
+	}
+
+	.icon-arrow--down {
+		margin-left: 5px;
+
+		&--rotate {
+			font-size: 2em;
+			transform: rotate(360deg);
+			margin: 0;
+		}
+	}
+
+	iframe {
+		width: auto;
+	}
+
+	.nav {
+		margin-bottom: 10px;
+		min-width: 100px;
+	}
+
+	.public-eye__list {
+		padding: 0;
+	}
+
+	.view {
+		display: flex;
+		width: 100%;
+		transform: translateY(0);
+	}
+
+	.theme {
+		&--purple {
+			.icon-arrow--down {
+				&--rotate {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
 
 
