@@ -86,7 +86,7 @@ const makeArrowListeners = () => {
 			prevView && prevView.classList.add('view-option--show');
 		else if (arrow2Rotate) {
 			console.log('prevView: ', prevView);
-			if (prevView !== random) {
+			if (prevView && prevView !== random) {
 				prevView.classList.remove('view-option--show');
 			}
 			if (mainOpen) {

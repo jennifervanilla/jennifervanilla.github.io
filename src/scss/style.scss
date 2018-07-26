@@ -267,6 +267,29 @@ ul {
 		background-size: cover;
 		color: white;
 
+		.icon-arrow {
+			margin-right: 4px;
+
+			&--down {
+				margin-left: 130px;
+
+				&--rotate {
+					margin-left: 66px;
+				}
+			}
+		}
+
+		.nav-main {
+
+			&__layer--horizontal {
+				margin-bottom: 12px;
+			}
+
+			&__list {
+				margin-top: 10px;
+			}
+		}
+
 		a {
 			color: white;
 		}
@@ -275,6 +298,7 @@ ul {
 			color: white;
 			font-family: sans-serif;
     	font-weight: 400;
+    	margin-right: 45px;
     	letter-spacing: 4px;
 		}
 
@@ -369,12 +393,30 @@ ul {
 			color: lime;
 		}
 
+		.icon-arrow {
+			transform: translateY(-4px);
+
+			&--down {
+				&--rotate {
+					margin-left: 70px;
+					margin-top: 10px;
+				}
+			}
+		}
+
 		#jv-title {
 			color: lime;
 			font-family: monospace;
 			font-size: 1.9em;
 			font-weight: 200;
+			margin-right: 40px;
 			letter-spacing: 0.25em;
+		}
+
+		.nav-main {
+			&__list {
+				margin-top: 4px;
+			}
 		}
 	}
 
