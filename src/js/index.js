@@ -55,15 +55,15 @@ const makeArrowListeners = () => {
 		let horizontalNav = document.querySelector('.js-horizontal-nav');
 		event.target.classList[action]('icon-arrow--rotate');
 		horizontalNav.classList[action]('nav-main__list--show');
-		lab.src = lab.src;
+		// lab.src = lab.src;
 		if (!arrow1Rotate) {
-			let video = getRandomVideo();
-			displayVideo(video);
-			random.classList.add('view-option--show');
 			if (prevView && prevView !== random && !mainOpen) {
 				prevView.classList.remove('view-option--show');
 				prevView = random;
 				randomOpen = true;
+				let video = getRandomVideo();
+				displayVideo(video);
+				random.classList.add('view-option--show');
 			}
 		} else if (!mainOpen) {
 			displayVideo('');
@@ -85,7 +85,10 @@ const makeArrowListeners = () => {
 		if (!arrow2Rotate)
 			prevView && prevView.classList.add('view-option--show');
 		else if (arrow2Rotate) {
-			prevView && prevView.classList.remove('view-option--show');
+			console.log('prevView: ', prevView);
+			if (prevView !== random) {
+				prevView.classList.remove('view-option--show');
+			}
 			if (mainOpen) {
 				lab.src = lab.src;
 			} 
@@ -121,6 +124,7 @@ const makeClockListener = () => {
 		if (!played) played = true;
 		if (mainOpen) {
 			prevView.classList.remove('view-option--show');
+			lab.src = lab.src;
 			mainOpen = false;
 		}
 		let video = getRandomVideo();
