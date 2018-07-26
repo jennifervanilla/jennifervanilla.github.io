@@ -173,10 +173,10 @@ const displayVideo = (video) => {
 	random.firstElementChild.src = video;
 }
 
-const themes = ['off', 'pink', 'purple', 'image', 'red',  'green', 'blue'];
+const themes = ['off', 'pink', 'purple', 'image', 'red',  'green'];
 const updateTheme = () => {
 	let prevTheme = themes[idx];
-	if (idx < 6) idx++
+	if (idx < 5) idx++
 	else idx = 1;
 	let nextTheme = themes[idx];
 	theme.classList.remove(`theme--${prevTheme}`);
@@ -184,7 +184,7 @@ const updateTheme = () => {
 };
 
 const init = () => {
-	idx = Math.floor(Math.random() * 6);
+	idx = Math.floor(Math.random() * 5);
 	theme.classList.remove(`theme--off`);
 	updateTheme();
 	makeArrowListeners();
