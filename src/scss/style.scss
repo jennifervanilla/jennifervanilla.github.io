@@ -126,6 +126,7 @@ p {
 	transition: all 1s ease;
 
 	&--show {
+		margin-right: 20px;
 		opacity: 1;
 		visibility: visible;
 	}
@@ -219,7 +220,7 @@ p {
 
 .view {
 	width: 600px;
-	transform: translateY(-40px);
+	transform: translateY(-15px);
 }
 
 .view-option {
@@ -250,7 +251,7 @@ p {
 }
 
 #random {
-	padding-top: 30px;
+	padding-top: 50px;
 }
 
 #here {
@@ -259,6 +260,14 @@ p {
 	&:hover {
 		text-decoration: none;
 	}
+}
+
+.up-arrow {
+	cursor: pointer;
+	float: right;
+	font-size: 1.2em;
+  margin-right: 30px;
+  margin-top: 15px;
 }
 
 .public-eye {
@@ -539,8 +548,9 @@ p {
 	}
 
 	#random {
-		transform: translateY(-200px);
 		margin: 0 auto;
+		padding-top: 0;
+		transform: translateY(-200px);
 	}
 
 	#a-jv-lab {
@@ -582,6 +592,16 @@ p {
 		padding-right: 0;
 	}
 
+	.nav-list {
+		li {
+			line-height: 1.5em;
+		}
+	}
+
+	.up-arrow {
+		align-self: flex-end;
+	}
+
 	.icon-arrow--down {
 		margin-left: 5px;
 
@@ -610,28 +630,92 @@ p {
 	}
 
 	.view {
+		margin-top: 10px;
 		display: flex;
 		width: 100%;
 		transform: translateY(0);
 	}
 
 	.theme {
+		&--pink {
+			.icon-arrow--down {
+					margin-top: -15px;
+					margin-left: 30px;
+				&--rotate {
+					margin-left: 20px;
+				}
+			}
+
+			.nav-main__list {
+				margin-bottom: 40px;
+			}
+
+			#jv-title {
+				margin-bottom: 10px;
+			}
+
+			.view {
+				margin-top: 60px;
+			}
+		}
+
 		&--purple {
 			.icon-arrow--down {
 				&--rotate {
 					margin: 0;
 				}
 			}
+
+			#jv-title {
+				font-weight: 500;
+				margin-bottom: 5px;
+			}
 		}
 
 		&--green {
+			.icon-arrow--down {
+				&--rotate {
+					margin-left: 30px;
+				}
+			}
+
 			#jv-title {
 				margin-bottom: 15px;
 			}
 		}
 
+		&--image {
+			.icon-arrow {
+				&--down {
+					margin-left: 30px;
+				}
+			}
+
+			#jv-title {
+				margin-bottom: 10px;
+			}
+		}
+
 		&--statue {
 			background-size: cover;
+			background-position-y: 30px;
+
+			.icon-arrow {
+				&--down {
+					margin-left: 10px;
+				}
+			}
+
+			.nav-list {
+				h3 {
+					line-height: 1.7em;
+					background: white;
+				}
+			}
+
+			#shop {
+				background: white;
+			}
 
 			#jv-title {
 				font-size: 2.2em;

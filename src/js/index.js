@@ -4,6 +4,8 @@ const theme = document.querySelector('.theme');
 const title = document.getElementById('jv-title');
 const arrow1 = document.querySelector('.icon-arrow');
 const arrow2 = document.querySelector('.icon-arrow--down');
+const arrowsUp = document.querySelector('.up-arrow');
+console.log('arrowsUp: ', arrowsUp);
 const verticalNav = document.querySelector('.js-vertical-nav');
 const random = document.getElementById('random');
 const clock = document.getElementById('clock');
@@ -107,6 +109,14 @@ const makeArrowListeners = () => {
 			prevView && prevView.classList.remove('view-option--show');
 		arrow2Rotate = !arrow2Rotate;
 	});
+
+	// arrowsUp.forEach(arrow => {
+	// 	console.log('arrow: ', arrow);
+	// 	arrow.addEventListener('click', () => {
+	// 		console.log('clicked');
+	// 		title.scrollIntoView({behavior: "smooth", block: "start"});
+	// 	})
+	// });
 };
 
 
