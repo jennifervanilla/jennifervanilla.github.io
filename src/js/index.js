@@ -51,13 +51,15 @@ const makeNavListeners = () => {
 
 const makeArrowListeners = () => {
 	arrow1.addEventListener('click', (event) => {
-		console.log('mainOpen: ', mainOpen);
 		let action = !arrow1Rotate ? 'add' : 'remove';
 		let horizontalNav = document.querySelector('.js-horizontal-nav');
 		event.target.classList[action]('icon-arrow--rotate');
 		horizontalNav.classList[action]('nav-main__list--show');
 		// lab.src = lab.src;
 		if (!arrow1Rotate) {
+			if (prevView && prevView === random) {
+				random.classList.add('view-option--show');
+			}
 			if (prevView && prevView !== random && !mainOpen) {
 				prevView.classList.remove('view-option--show');
 				prevView = random;
@@ -78,15 +80,12 @@ const makeArrowListeners = () => {
 	});
 
 	arrow2.addEventListener('click', (event) => {
-		console.log('prevView: ', prevView);
-		// if (randomShowing) random.setAttribute('style', 'transform: translateY(0)');
 		let action = !arrow2Rotate ? 'add' : 'remove';
 		event.target.classList[action]('icon-arrow--down--rotate');
 		verticalNav.classList[action]('nav--show');
 		if (!arrow2Rotate)
 			prevView && prevView.classList.add('view-option--show');
 		else if (arrow2Rotate) {
-			console.log('prevView: ', prevView);
 			if (prevView && prevView !== random) {
 				prevView.classList.remove('view-option--show');
 			}
@@ -98,7 +97,6 @@ const makeArrowListeners = () => {
 	});
 
 	mobileArrow.addEventListener('click', (event) => {
-		console.log('prevView: ', prevView);
 		if (randomShowing) random.setAttribute('style', 'transform: translateY(0)');
 		let action = !arrow2Rotate ? 'add' : 'remove';
 		event.target.classList[action]('icon-arrow--down--rotate');
