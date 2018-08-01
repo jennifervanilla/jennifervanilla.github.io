@@ -547,11 +547,11 @@ p {
 		.view-option {
 			animation: fadeIn 1s ease;
 		}
+	}
 
-		.view-option--show{
-			display: flex;
-			flex-direction: column;
-		}
+	.view-option--show{
+		display: flex;
+		flex-direction: column;
 	}
 
 	.icon-arrow {
