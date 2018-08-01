@@ -51,6 +51,7 @@ const makeNavListeners = () => {
 
 const makeArrowListeners = () => {
 	arrow1.addEventListener('click', (event) => {
+		console.log('mainOpen: ', mainOpen);
 		let action = !arrow1Rotate ? 'add' : 'remove';
 		let horizontalNav = document.querySelector('.js-horizontal-nav');
 		event.target.classList[action]('icon-arrow--rotate');
@@ -67,11 +68,11 @@ const makeArrowListeners = () => {
 			}
 		} else if (!mainOpen) {
 			displayVideo('');
-			random.classList.remove('view-option--show');
+			random && random.classList.remove('view-option--show');
 			random.firstElementChild.src = "";
-			prevView.classList.remove('view-option--show');
+			if (prevView && prevView !== random) prevView.classList.remove('view-option--show');
 			randomOpen = true;
-		}
+		} 
 
 		arrow1Rotate = !arrow1Rotate;
 	});
@@ -173,10 +174,10 @@ const displayVideo = (video) => {
 	random.firstElementChild.src = video;
 }
 
-const themes = ['off', 'pink', 'purple', 'image', 'red',  'green'];
+const themes = ['off', 'pink', 'purple', 'image', 'red',  'green', 'blue', 'statue'];
 const updateTheme = () => {
 	let prevTheme = themes[idx];
-	if (idx < 5) idx++
+	if (idx < 7) idx++
 	else idx = 1;
 	let nextTheme = themes[idx];
 	theme.classList.remove(`theme--${prevTheme}`);

@@ -14,6 +14,7 @@ html {
 body {
 	box-sizing: border-box;
 	padding: 30px;
+	font-family: sans-serif;
 }
 
 img {
@@ -55,10 +56,23 @@ h2 {
 
 h3 {
 	cursor: pointer;
+	letter-spacing: 0.02em;
 }
 
 ul {
 	list-style: none;
+}
+
+p {
+	line-height: 1.5em;
+
+	.bold {
+		font-weight: bold;
+	}
+
+	.italic {
+		font-style: italic;
+	}
 }
 
 .icon-arrow {
@@ -72,6 +86,7 @@ ul {
 	}
 
 	&--down {
+		font-family: none;
 		font-size: 2em;
 		margin-left: 119px;
 		transition: all 1.5s ease;
@@ -378,6 +393,7 @@ ul {
 			font-family: serif;
 			font-style: italic;
 			letter-spacing: 0.03em;
+			width: 311px;
 		}
 
 		a {
@@ -427,6 +443,28 @@ ul {
 		a {
 			color: navy;
 			font-style: bold;
+		}
+	}
+
+	&--statue {
+		background-image: url(../../assets/images/statue.png);
+		background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+		h3 {
+			font-family: 'Cooper Black Italic';
+			font-weight: 100;
+			letter-spacing: 0.2px;
+			line-height: 2.8em;
+		}
+
+		#jv-title {
+			font-family: 'Cooper Black Italic';
+			font-weight: 500;
+			letter-spacing: 0.5px;
+			width: 400px;
+			margin-right: 20px;
 		}
 	}
 }
