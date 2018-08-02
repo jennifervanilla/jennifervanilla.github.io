@@ -292,6 +292,21 @@ p {
   margin-top: 15px;
 }
 
+.elsa {
+	font-size: 0.7em;
+	letter-spacing: 0.06em;
+	margin-top: 80px;
+	position: absolute;
+
+	a {
+		font-family: fantasy;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
 .public-eye {
 
 	&__item {
@@ -559,6 +574,10 @@ p {
 }
 
 @media screen and (max-width: $breakpoint-sm) {
+	.outer {
+		overflow-x: hidden;
+	}
+
 	.nav-main__layer--horizontal {
 		flex-direction: column;
 	}
@@ -579,6 +598,10 @@ p {
 		li {
 			font-size: 1.05em;
 		}
+	}
+
+	.elsa {
+		position: relative;
 	}
 
 	#jv-title {
@@ -756,12 +779,18 @@ p {
 		&--blue {
 			#jv-title {
 				font-size: 2em;
+				width: 100%;
 			}
 		}
 
 		&--statue {
 			background-size: cover;
-			background-position: center, 30px;
+			background-position-x: center;
+			background-position-y: 30px;
+
+			.up-arrow {
+				background-color: white;
+			}
 
 			.icon-arrow {
 				&--down {
