@@ -25,10 +25,25 @@ html {
 	height: 100%;
 }
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 body {
+	height: 100%;
 	box-sizing: border-box;
 	padding: 30px;
 	font-family: sans-serif;
+	overflow: hidden;
+}
+
+.outer {
+	position: absolute;
+	overflow: auto;
+	top: 30px;
+  bottom: 0;
+  left: 30px;
+  right: 30px;
 }
 
 img {
@@ -65,6 +80,7 @@ h1 {
 
 h2 {
 	margin: 0;
+	font-size: 1.2em;
 	line-height: 2rem;
 }
 
@@ -74,10 +90,12 @@ h3 {
 }
 
 ul {
+	font-size: 0.95em;
 	list-style: none;
 }
 
 p {
+	font-size: 0.95em;
 	line-height: 1.5em;
 
 	.bold {
@@ -87,6 +105,10 @@ p {
 	.italic {
 		font-style: italic;
 	}
+}
+
+.up-arrow--mobile {
+	display: none;
 }
 
 .icon-arrow {
@@ -221,6 +243,7 @@ p {
 .view {
 	width: 600px;
 	transform: translateY(-15px);
+	margin-bottom: 70px;
 }
 
 .view-option {
@@ -233,7 +256,6 @@ p {
 }
 
 #clock {
-	cursor: help;
 	margin-left: -6px;
 	transform: translateY(1px);
 }
@@ -304,6 +326,7 @@ p {
 	&--image {
 		background-image: url(../../assets/images/background.jpg);
 		background-size: cover;
+		background-attachment: fixed;
 		color: white;
 
 		.icon-arrow {
@@ -474,19 +497,28 @@ p {
 		}
 
 		#jv-title {
-			font-family: fantasy;
+			font-family: 'Cooper Black', serif;
 			letter-spacing: 0.05em;
+			margin-bottom: 14px;
+			width: 375px;
 		}
 	}
 
 	&--statue {
 		background-image: url(../../assets/images/statue.png);
-		background-size: 400px;
+		background-size: 640px;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 240px, center;
+    background-attachment: fixed;
 
     p, .public-eye__item {
     	background-color: white;
+    }
+
+    #a-contact {
+    	a {
+    		background-color: white;
+    	}
     }
 
 		h3 {
@@ -531,8 +563,22 @@ p {
 		flex-direction: column;
 	}
 
+	h2 {
+		font-size: 1.3em;
+	}
+
 	h3 {
 		margin-top: 0;
+	}
+
+	p {
+		font-size: 1.05em;
+	}
+
+	ul {
+		li {
+			font-size: 1.05em;
+		}
 	}
 
 	#jv-title {
@@ -558,6 +604,11 @@ p {
 			animation: fadeIn 1s ease;
 		}
 	}
+
+	.up-arrow--mobile {
+		display: block;
+	}
+
 
 	.view-option--show{
 		display: flex;
@@ -667,6 +718,7 @@ p {
 			}
 
 			#jv-title {
+				font-size: 2.5em;
 				font-weight: 500;
 				margin-bottom: 5px;
 			}
@@ -680,11 +732,14 @@ p {
 			}
 
 			#jv-title {
+				font-size: 1.7em;
 				margin-bottom: 15px;
 			}
 		}
 
 		&--image {
+			background-position-x: 820px;
+
 			.icon-arrow {
 				&--down {
 					margin-left: 30px;
@@ -692,13 +747,21 @@ p {
 			}
 
 			#jv-title {
+				font-size: 2.3em;
+				font-weight: 300;
 				margin-bottom: 10px;
+			}
+		}
+
+		&--blue {
+			#jv-title {
+				font-size: 2em;
 			}
 		}
 
 		&--statue {
 			background-size: cover;
-			background-position-y: 30px;
+			background-position: center, 30px;
 
 			.icon-arrow {
 				&--down {
@@ -718,7 +781,7 @@ p {
 			}
 
 			#jv-title {
-				font-size: 2.2em;
+				font-size: 1.95em;
     		margin-bottom: 9px;
     		margin-right: 0;
     		width: auto;
