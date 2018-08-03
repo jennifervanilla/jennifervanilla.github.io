@@ -307,6 +307,16 @@ p {
 	}
 }
 
+.bio-photos {
+	display: flex;
+	margin-top: 50px;
+
+	img {
+		max-height: 350px;
+		margin-right: 10px;
+	}
+}
+
 .public-eye {
 
 	&__item {
@@ -708,6 +718,16 @@ p {
 		display: flex;
 		width: 100%;
 		transform: translateY(0);
+	}
+
+	.bio-photos {
+		flex-direction: column;
+
+		img {
+			margin-right: 0;
+			max-width: 100%;
+			max-height: 100%;
+		}
 	}
 
 	.theme {
