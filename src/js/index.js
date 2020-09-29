@@ -12,8 +12,8 @@ const mobileClock = document.getElementById('clock--mobile');
 const mobileArrow = document.getElementById('arrow--mobile');
 let lab = document.getElementById('lab');
 
-let arrow1Rotate = false;
-let arrow2Rotate = false;
+let arrow1Rotate = true;
+let arrow2Rotate = true;
 let randomOpen = false;
 let mainOpen = false;
 let randomShowing = false;
@@ -179,20 +179,8 @@ const displayVideo = (video) => {
 	random.firstElementChild.src = video;
 }
 
-const themes = ['off', 'pink', 'purple', 'image', 'red',  'green', 'blue', 'statue'];
-const updateTheme = () => {
-	let prevTheme = themes[idx];
-	if (idx < 7) idx++
-	else idx = 1;
-	let nextTheme = themes[idx];
-	theme.classList.remove(`theme--${prevTheme}`);
-	theme.classList.add(`theme--${nextTheme}`);
-};
-
 const init = () => {
-	idx = Math.floor(Math.random() * 5);
 	theme.classList.remove(`theme--off`);
-	updateTheme();
 	makeArrowListeners();
 	makeNavListeners();
 	makeTitleListener();
