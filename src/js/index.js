@@ -12,8 +12,8 @@ const mobileClock = document.getElementById('clock--mobile');
 const mobileArrow = document.getElementById('arrow--mobile');
 let lab = document.getElementById('lab');
 
-let arrow1Rotate = false;
-let arrow2Rotate = false;
+let arrow1Rotate = true;
+let arrow2Rotate = true;
 let randomOpen = false;
 let mainOpen = false;
 let randomShowing = false;
