@@ -119,7 +119,6 @@ const makeArrowListeners = () => {
 
 const makeTitleListener = () => {
 	title.addEventListener('click', () => {
-		updateTheme();
 		window.scrollTo(0, -30);
 	})
 };
