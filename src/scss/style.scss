@@ -259,6 +259,11 @@ p {
 	cursor: url(../../assets/images/hand.cur), auto;
 	margin-left: -6px;
 	transform: translateY(1px);
+
+	img {
+		max-height: 25px;
+    margin: 0;
+	}
 }
 
 #a-contact {
