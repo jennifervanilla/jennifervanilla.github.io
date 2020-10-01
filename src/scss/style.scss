@@ -143,14 +143,14 @@ p {
 	display: flex;
 	justify-content: center;
 	min-width: 250px;
-/*	opacity: 0;
+	opacity: 0;
 	visibility: hidden;
-	transition: opacity 1s ease;*/
+	transition: opacity 2s ease;
 
 	&--show {
 		margin-right: 20px;
-/*		opacity: 1;
-		visibility: visible;*/
+		opacity: 1;
+		visibility: visible;
 	}
 
 	&-list {
@@ -161,7 +161,7 @@ p {
 
 	&-link {
 		margin-bottom: 20px;
-/*		transition: all 1s ease;*/
+		transition: all 1s ease;
 
 		&--active {
 			font-style: italic;
@@ -356,12 +356,17 @@ p {
 
 .theme {
 	color: white;
-	/*transition: background 1.5s linear;*/
+	transition: opacity 1.5s linear;
+
+	&--off {
+		opacity: 0;
+	}
 
 	&--image {
 		background-image: url(../../assets/images/background.jpg);
 		background-size: cover;
 		background-attachment: fixed;
+		opacity: 1;
 
 		.icon-arrow {
 			margin-right: 4px;
@@ -376,7 +381,6 @@ p {
 		}
 
 		.nav-main {
-
 			&__layer--horizontal {
 				margin-bottom: 12px;
 			}
