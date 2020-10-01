@@ -145,7 +145,7 @@ p {
 	min-width: 250px;
 	opacity: 0;
 	visibility: hidden;
-	transition: all 1s ease;
+	transition: opacity 1s ease;
 
 	&--show {
 		margin-right: 20px;
@@ -168,7 +168,6 @@ p {
 		}
 
 		&__list {
-
 			&--recordings {
 				display: flex;
 				justify-content: space-between;
@@ -357,7 +356,7 @@ p {
 
 .theme {
 	color: white;
-	transition: background 1.5s linear;
+	/*transition: background 1.5s linear;*/
 
 	&--image {
 		background-image: url(../../assets/images/background.jpg);
