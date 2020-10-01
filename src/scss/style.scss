@@ -246,6 +246,7 @@ p {
 
 .view {
 	width: 620px;
+	min-width: 200px;
 	transform: translateY(-15px);
 	margin-bottom: 70px;
 }
@@ -259,6 +260,10 @@ p {
 
 	&--show {
 		display: block;
+
+		iframe {
+			width: 100%;
+		}
 	}
 }
 
@@ -323,12 +328,13 @@ p {
 
 .bio-photos {
 	display: flex;
+	justify-content: space-around;
 	margin-top: 20px;
 
 	img {
 		max-height: 350px;
-		margin-right: 10px;
-		width: 192px
+		margin-right: 0;
+		width: 32%
 	}
 }
 
@@ -536,6 +542,14 @@ p {
 		display: flex;
 		width: 100%;
 		transform: translateY(0);
+	}
+
+	.nav-link__list--recordings {
+		flex-direction: column;
+
+		li {
+			width: 100%;
+		}
 	}
 
 	.bio-photos {
