@@ -143,14 +143,14 @@ p {
 	display: flex;
 	justify-content: center;
 	min-width: 250px;
-	opacity: 0;
+/*	opacity: 0;
 	visibility: hidden;
-	transition: opacity 1s ease;
+	transition: opacity 1s ease;*/
 
 	&--show {
 		margin-right: 20px;
-		opacity: 1;
-		visibility: visible;
+/*		opacity: 1;
+		visibility: visible;*/
 	}
 
 	&-list {
@@ -161,7 +161,7 @@ p {
 
 	&-link {
 		margin-bottom: 20px;
-		transition: all 1s ease;
+/*		transition: all 1s ease;*/
 
 		&--active {
 			font-style: italic;
