@@ -358,18 +358,6 @@ p {
 	color: white;
 	transition: background 1.5s linear;
 
-	&--off {
-		color: transparent;
-
-		a {
-			color: transparent;
-		}
-
-		#jv-title {
-			color: transparent;
-		}
-	}
-
 	&--image {
 		background-image: url(../../assets/images/background.jpg);
 		background-size: cover;
