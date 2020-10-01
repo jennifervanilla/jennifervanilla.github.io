@@ -169,17 +169,20 @@ p {
 		&__list {
 
 			&--recordings {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 0;
+				padding: 0;
+
 				li {
 					font-family: monospace;
 					font-size: 1.5em;
 					margin-bottom: 10px;
 					text-decoration: underline;
+					width: 49%;
 
-					&:hover {
-						text-decoration: none;
-						a {
-							font-style: italic;
-						}
+					iframe {
+						width: 100% !important;
 					}
 				}
 			}
@@ -326,7 +329,7 @@ p {
 
 .bio-photos {
 	display: flex;
-	margin-top: 50px;
+	margin-top: 20px;
 
 	img {
 		max-height: 350px;
