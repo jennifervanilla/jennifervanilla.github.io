@@ -180,6 +180,7 @@ const displayVideo = (video) => {
 
 const init = () => {
 	theme.classList.remove(`theme--off`);
+	theme.classList.add(`theme--image`);
 	makeArrowListeners();
 	makeNavListeners();
 	makeTitleListener();
