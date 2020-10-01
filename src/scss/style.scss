@@ -143,14 +143,9 @@ p {
 	display: flex;
 	justify-content: center;
 	min-width: 250px;
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 2s ease;
 
 	&--show {
 		margin-right: 20px;
-		opacity: 1;
-		visibility: visible;
 	}
 
 	&-list {
@@ -161,7 +156,6 @@ p {
 
 	&-link {
 		margin-bottom: 20px;
-		transition: all 1s ease;
 
 		&--active {
 			font-style: italic;
@@ -356,17 +350,11 @@ p {
 
 .theme {
 	color: white;
-	transition: opacity 1.5s linear;
-
-	&--off {
-		opacity: 0;
-	}
 
 	&--image {
 		background-image: url(../../assets/images/background.jpg);
 		background-size: cover;
 		background-attachment: fixed;
-		opacity: 1;
 
 		.icon-arrow {
 			margin-right: 4px;
