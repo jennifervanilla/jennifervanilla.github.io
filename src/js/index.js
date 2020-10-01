@@ -56,7 +56,7 @@ const makeArrowListeners = () => {
 		let horizontalNav = document.querySelector('.js-horizontal-nav');
 		event.target.classList[action]('icon-arrow--rotate');
 		horizontalNav.classList[action]('nav-main__list--show');
-		// lab.src = lab.src;
+
 		if (!arrow1Rotate) {
 			if (prevView && prevView === random) {
 				random.classList.add('view-option--show');
@@ -179,8 +179,6 @@ const displayVideo = (video) => {
 }
 
 const init = () => {
-	// theme.classList.remove(`theme--off`);
-	// theme.classList.add(`theme--image`);
 	makeArrowListeners();
 	makeNavListeners();
 	makeTitleListener();
